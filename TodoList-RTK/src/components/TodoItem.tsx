@@ -1,12 +1,9 @@
 import { FC } from 'react'
 import {useDispatch} from 'react-redux'
- import {removeTodo } from '../features/Todo/TodoSlice.ts'
-interface Todo {
-    id: string;
-    title: string;
-    isCompleted: boolean;
-}
-type TodoProps = {
+import {removeTodo } from '../features/Todo/TodoSlice.ts'
+import { Todo } from '../Types/Todo.ts'
+
+interface TodoProps  {
     data: Todo
 }
 

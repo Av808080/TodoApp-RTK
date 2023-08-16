@@ -1,12 +1,9 @@
 import TodoItem from "./TodoItem"
 import { useSelector } from 'react-redux'
+import { Todo } from "../Types/Todo"
 const TodoWrapper = () => {
     const todos = useSelector((store: any) => store.todo)
-    interface Todo {
-        id: string;
-        title: string;
-        isCompleted: boolean;
-    }
+  
     return (
         <div>
             {todos.map(((item: Todo) => <TodoItem key={item.id} data={item} />))}
