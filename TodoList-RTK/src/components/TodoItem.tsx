@@ -21,13 +21,13 @@ const TodoItem: FC<TodoProps> = ({ todo }) => {
     const [isEditing, setIsEditing] = useState(false)
     const [input, setInput] = useState(todo.title)
     return (
-        <div className='flex gap-6 items-center w-5/6 sm:w-4/6 max-w-lg bg-teal-300 min-h-[40px] mx-auto my-2 rounded-xl px-1'>
-            <div className='w-4/6 px-6 py-1'>
+        <div className='flex gap-6 items-center flex-wrap w-11/12 sm:w-4/6 max-w-sm bg-teal-300 min-h-[40px] mx-auto my-2 rounded-xl px-1'>
+            <div className='w-4/6 px-6 py-1 overflow-scroll'>
                 {isEditing ?
                     <input value={input}
-                        className='ring-1 ring-teal-500 focus:outline-none focus:ring-2 rounded-lg px-3 py-0.5 bg-teal-50'
+                        className='w-[150px] sm:w-full ring-1 ring-teal-500 focus:outline-none focus:ring-2 rounded-lg px-3 py-0.5 bg-teal-50'
                         onChange={(e: ChangeEvent<HTMLInputElement>) => setInput(e.target.value)} />
-                    : <p onClick={() => dispatch(setIsCompleted(todo.id))} className={`${todo.isCompleted && 'line-through decoration-slate-500 opacity-75'} text-lg`}>{todo.title} </p>}
+                    : <p title='درصورت تکمیل کلیک کنید' onClick={() => dispatch(setIsCompleted(todo.id))} className={`${todo.isCompleted && 'line-through decoration-slate-500 opacity-75'} text-lg font-semibold`}>{todo.title} </p>}
             </div>
             {isEditing ? <>
                 <MdCancel style={iconStyle} size="24px" onClick={() => setIsEditing(false)} />

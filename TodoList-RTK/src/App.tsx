@@ -5,7 +5,7 @@ import TodoWrapper from './components/TodoWrapper'
 const App = () => {
   return (
     <Provider store={store}>
-      <div className='min-h-screen bg-sky-100'>
+      <div className='min-h-screen bg-sky-200/80'>
         <Form />
         <TodoWrapper/>
 

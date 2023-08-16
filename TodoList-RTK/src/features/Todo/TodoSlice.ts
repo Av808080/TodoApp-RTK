@@ -2,6 +2,11 @@ import { createSlice, nanoid } from "@reduxjs/toolkit";
 import { PayloadAction } from "@reduxjs/toolkit/dist/createAction";
 import { Todo } from "../../Types/Todo";
 
+interface EditPayload {
+  id: string;
+  newTitle: string;
+}
+
 const initialState = [] as Todo[];
 
 const todoSlice = createSlice({
@@ -14,7 +19,7 @@ const todoSlice = createSlice({
     removeTodo: (state: Todo[], action: PayloadAction<string>) =>
       state.filter((todo: Todo) => todo.id !== action.payload),
 
-    editTodo: (state: Todo[], action: PayloadAction<any>) => {
+    editTodo: (state: Todo[], action: PayloadAction<EditPayload>) => {
       state.find((todo: Todo) => todo.id === action.payload.id);
       state.map((todo: Todo) =>
         todo.id === action.payload.id
