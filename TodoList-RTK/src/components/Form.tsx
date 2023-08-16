@@ -1,10 +1,12 @@
-import { useState, ChangeEvent } from 'react'
-
+import { useState, ChangeEvent, FormEvent } from 'react'
+import { useDispatch } from 'react-redux'
+import { addTodo } from '../features/Todo/TodoSlice'
 const Form = () => {
     const [inputValue, setInputValue] = useState('');
+    const dispatch = useDispatch()
     return (
         <div className='px-2 py-4 '>
-            <form onSubmit={() => { }} className='flex flex-col items-center gap-3 mx-auto'>
+            <form onSubmit={(e: FormEvent<HTMLFormElement>) => { e.preventDefault(); dispatch(addTodo(inputValue)) }} className='flex flex-col items-center gap-3 mx-auto'>
 
                 <input value={inputValue}
                     onChange={(e: ChangeEvent<HTMLInputElement>) => setInputValue(e.target.value)}
