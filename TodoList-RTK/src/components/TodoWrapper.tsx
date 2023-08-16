@@ -6,7 +6,7 @@ const TodoWrapper = () => {
   
     return (
         <div>
-            {todos.map(((item: Todo) => <TodoItem key={item.id} data={item} />))}
+            {todos.map(((item: Todo) => <TodoItem key={item.id} todo={item} />))}
         </div>
     )
 }

@@ -6,8 +6,7 @@ const Form = () => {
     const dispatch = useDispatch()
     return (
         <div className='px-2 py-4 '>
-            <form onSubmit={(e: FormEvent<HTMLFormElement>) => { e.preventDefault(); dispatch(addTodo(inputValue)) }} className='flex flex-col items-center gap-3 mx-auto'>
-
+            <form onSubmit={(e: FormEvent<HTMLFormElement>) => { e.preventDefault(); inputValue &&dispatch(addTodo(inputValue)); setInputValue('') }} className='flex flex-col items-center gap-3 mx-auto'>
                 <input value={inputValue}
                     onChange={(e: ChangeEvent<HTMLInputElement>) => setInputValue(e.target.value)}
                     className='ring-1 ring-teal-500 focus:outline-none focus:ring-2 rounded-lg px-3 py-0.5'
