@@ -1,8 +1,10 @@
-import React from 'react'
+import Form from './components/Form'
 
 const App = () => {
   return (
-    <div>
+    <div className='min-h-screen bg-sky-100'>
+      <Form/>
+      
       
     </div>
   )
